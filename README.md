@@ -84,8 +84,8 @@ say $ld.code;  # EN
 
 The `code` method returns the identifying code of this locale.
 
-code
-----
+am
+--
 
 ```raku
 say $ld.am;  # am
@@ -93,8 +93,8 @@ say $ld.am;  # am
 
 The `am` method returns the representation of "ante meridiem".
 
-code
-----
+pm
+--
 
 ```raku
 say $ld.pm;  # pm
@@ -102,8 +102,8 @@ say $ld.pm;  # pm
 
 The `pm` method returns the representation of "post meridiem".
 
-code
-----
+date-time-representation
+------------------------
 
 ```raku
 say $ld.date-time-representation;  # %a %b %e %T %Z %G
@@ -120,7 +120,6 @@ my $ld = Locale::Dates.new(
   weekdays => <AAAA BBBB CCCC DDDD EEEE FFFF GGGG>,
   months   => <MMMM NNNN OOOO PPPP QQQQ RRRR
                SSSS TTTT UUUU VVVV WWWW XXXX>,
-  date-time-representation => "zippie",
   am => "meh",
   pm => "duh",
 );
@@ -146,7 +145,7 @@ Required. A `List` with month names for this locale, starting at January.
 date-time-representation
 ------------------------
 
-Required. The `strftime` format representation for date and time for this locale.
+Optional. The `strftime` format representation for date and time for this locale. Defaults to `"%a %e %b %T %Z %G"`.
 
 am
 --

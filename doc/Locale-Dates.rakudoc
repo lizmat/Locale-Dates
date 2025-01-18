@@ -93,7 +93,7 @@ say $ld.code;  # EN
 
 The C<code> method returns the identifying code of this locale.
 
-=head2 code
+=head2 am
 
 =begin code :lang<raku>
 
@@ -103,7 +103,7 @@ say $ld.am;  # am
 
 The C<am> method returns the representation of "ante meridiem".
 
-=head2 code
+=head2 pm
 
 =begin code :lang<raku>
 
@@ -113,7 +113,7 @@ say $ld.pm;  # pm
 
 The C<pm> method returns the representation of "post meridiem".
 
-=head2 code
+=head2 date-time-representation
 
 =begin code :lang<raku>
 
@@ -133,7 +133,6 @@ my $ld = Locale::Dates.new(
   weekdays => <AAAA BBBB CCCC DDDD EEEE FFFF GGGG>,
   months   => <MMMM NNNN OOOO PPPP QQQQ RRRR
                SSSS TTTT UUUU VVVV WWWW XXXX>,
-  date-time-representation => "zippie",
   am => "meh",
   pm => "duh",
 );
@@ -159,8 +158,8 @@ at January.
 
 =head2 date-time-representation
 
-Required.  The C<strftime> format representation for date and time
-for this locale.
+Optional.  The C<strftime> format representation for date and time
+for this locale.  Defaults to C<"%a %e %b %T %Z %G">.
 
 =head2 am
 

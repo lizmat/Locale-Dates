@@ -1,12 +1,12 @@
 class Locale::Dates {
     has str $.code                     is required;
-    has str $.date-time-representation is required;
     has     @.weekdays                 is required;
     has     @.months                   is required;
     has     @.abbreviated-weekdays;
     has     @.abbreviated-months;
     has str $.am = "am";
     has str $.pm = "pm";
+    has str $.date-time-representation = '%a %e %b %T %Z %G';
 
     method TWEAK() {
         # Make sure 0-based weekdays also work
@@ -44,7 +44,6 @@ my constant %known-locales =
     code     => "DE",
     weekdays => <Montag Dienstag Mittwoch Donnerstag Freitag Samstag Sontag>,  # UNCOVERABLE
     months   => <Januar Februar März April Mai Juni Juli August September Oktober November December>,  # UNCOVERABLE
-    date-time-representation => '%a %e %b %T %Z %G',
   ),
 
   EN => Locale::Dates.new(
@@ -58,7 +57,6 @@ my constant %known-locales =
     code     => "NL",
     weekdays => <maandag dinsdag woensdag donderdag vrijdag zaterdag zondag>,  # UNCOVERABLE
     months   => <januari februari maart april mei juni juli augustus september oktober november december>,  # UNCOVERABLE
-    date-time-representation => '%a %e %b %T %Z %G',
   ),
 ;
 
