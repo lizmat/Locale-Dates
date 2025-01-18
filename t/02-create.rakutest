@@ -1,0 +1,35 @@
+use Test;
+use Locale::Dates;
+
+plan 12;
+
+my %args is Map =
+  code => "foo",
+  weekdays => <AAAA BBBB CCCC DDDD EEEE FFFF GGGG>,
+  months   => <MMMM NNNN OOOO PPPP QQQQ RRRR
+               SSSS TTTT UUUU VVVV WWWW XXXX>,
+  date-time-representation => "zippie",
+  am => "meh",
+  pm => "duh",
+;
+
+my $ld = Locale::Dates.new(|%args);
+
+is $ld.code, %args<code>, 'is code correct';
+is $ld.am,   %args<am>,   'is am correct';
+is $ld.pm,   %args<pm>,   'is pm correct';
+
+is $ld.date-time-representation, %args<date-time-representation>,
+  'is date-time-representation correct';
+
+is $ld.weekdays[0], 'GGGG', 'is weekday 0 correct';
+is $ld.weekdays[1], 'AAAA', 'is weekday 1 correct';
+is $ld.abbreviated-weekdays[0], 'GGG', 'is abbrev weekday 0 correct';
+is $ld.abbreviated-weekdays[1], 'AAA', 'is abbrev weekday 1 correct';
+
+is $ld.months[0], '?', 'is month 0 correct';
+is $ld.months[1], 'MMMM', 'is month 1 correct';
+is $ld.abbreviated-months[0], '?',   'is abbrev month 0 correct';
+is $ld.abbreviated-months[1], 'MMM', 'is abbrev month 1 correct';
+
+# vim: expandtab shiftwidth=4

@@ -1,0 +1,4 @@
+.precomp/
+/Locale-Dates-*
+/releases/
+*.rakucov

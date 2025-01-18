@@ -1,0 +1,14 @@
+use Test;
+use Locale::Dates;
+
+my @known-locales = <DE EN NL>;
+
+plan 2 * @known-locales;
+
+for @known-locales {
+    my $ld = Locale::Dates($_);
+    isa-ok $ld, Locale::Dates;
+    is $ld.code, $_, "Does '$_' have the right code";
+}
+
+# vim: expandtab shiftwidth=4

@@ -1,0 +1,146 @@
+=begin pod
+
+=head1 NAME
+
+Locale::Dates - encapsulate locale information about dates
+
+=head1 SYNOPSIS
+
+=begin code :lang<raku>
+
+use Locale::Dates;
+
+my $ld = Locale::Dates("EN");  # or DE NL
+
+say $ld.weekdays[1];              # Monday
+say $ld.abbreviated-weekdays[2];  # Tue
+say $ld.months[3];                # March
+say $ld.abbreviated-months[4];    # Apr
+
+say $ld.code;  # EN
+say $ld.am;    # am
+say $ld.pm;    # pm
+
+say $ld.date-time-representation;  # %a %b %e %T %Z %G
+
+=end code
+
+=head1 DESCRIPTION
+
+The C<Locale-Dates> distribution provides a database of locale
+information pertaining to dates.  And it provides a class to encapsulate
+bespoke information.
+
+=head1 METHODS
+
+=head2 weekdays
+
+=begin code :lang<raku>
+
+say $ld.weekdays[0];  # Sunday
+say $ld.weekdays[1];  # Monday
+say $ld.weekdays[7];  # Sunday
+
+=end code
+
+The C<weekdays> method returns a C<List> with full weekday names,
+handling both 0-based as well as 1-based weekday values.
+
+=head2 abbreviated-weekdays
+
+=begin code :lang<raku>
+
+say $ld.abbreviated-weekdays[0];  # Sun
+say $ld.abbreviated-weekdays[1];  # Mon
+say $ld.abbreviated-weekdays[7];  # Sun
+
+=end code
+
+The C<abbreviated-weekdays> method returns a C<List> with abbreviated
+weekday names, handling both 0-based as well as 1-based weekday values.
+
+=head2 months
+
+=begin code :lang<raku>
+
+say $ld.months[ 1];  # January
+say $ld.months[12];  # December
+
+=end code
+
+The C<months> method returns a C<List> with full month names.
+Handles 1-based month values only.
+
+=head2 abbreviated-months
+
+=begin code :lang<raku>
+
+say $ld.abbreviated-months[ 1];  # Jan
+say $ld.abbreviated-months[12];  # Dec
+
+=end code
+
+The C<abbreviated-months> method returns a C<List> with abbreviated
+month names.  Handles 1-based month values only.
+
+=head2 code
+
+=begin code :lang<raku>
+
+say $ld.code;  # EN
+
+=end code
+
+The C<code> method returns the identifying code of this locale.
+
+=head2 code
+
+=begin code :lang<raku>
+
+say $ld.am;  # am
+
+=end code
+
+The C<am> method returns the representation of "ante meridiem".
+
+=head2 code
+
+=begin code :lang<raku>
+
+say $ld.pm;  # pm
+
+=end code
+
+The C<pm> method returns the representation of "post meridiem".
+
+=head2 code
+
+=begin code :lang<raku>
+
+say $ld.date-time-representation;  # %a %b %e %T %Z %G
+
+=end code
+
+The C<date-time-representation> method returns the C<strftime> format
+for the representation of date and time.
+
+=head1 AUTHOR
+
+Elizabeth Mattijsen <liz@raku.rocks>
+
+Source can be located at: https://github.com/lizmat/Locale-Dates .
+Comments and Pull Requests are welcome.
+
+If you like this module, or what I'm doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2025 Elizabeth Mattijsen
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+
+=end pod
+
+# vim: expandtab shiftwidth=4

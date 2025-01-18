@@ -1,0 +1,27 @@
+{
+  "auth": "zef:lizmat",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "encapsulate locale information about dates",
+  "license": "Artistic-2.0",
+  "name": "Locale::Dates",
+  "perl": "6.d",
+  "provides": {
+    "Locale::Dates": "lib/Locale/Dates.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/Locale-Dates.git",
+  "tags": [
+    "LOCALE",
+    "DATETIME"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
