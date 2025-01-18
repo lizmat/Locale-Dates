@@ -124,6 +124,64 @@ say $ld.date-time-representation;  # %a %b %e %T %Z %G
 The C<date-time-representation> method returns the C<strftime> format
 for the representation of date and time.
 
+=head1 CREATING YOUR OWN DATE LOCALE
+
+=begin code :lang<raku>
+
+my $ld = Locale::Dates.new(
+  code => "foo",
+  weekdays => <AAAA BBBB CCCC DDDD EEEE FFFF GGGG>,
+  months   => <MMMM NNNN OOOO PPPP QQQQ RRRR
+               SSSS TTTT UUUU VVVV WWWW XXXX>,
+  date-time-representation => "zippie",
+  am => "meh",
+  pm => "duh",
+);
+
+=end code
+
+The C<Locale::Dates> class can be instantiated like any other Raku
+class using named arguments.
+
+=head2 code
+
+Required. The identifier code of this locale.
+
+=head2 weekdays
+
+Required.  A C<List> with weekday names for this locale, starting
+at Monday.
+
+=head2 months
+
+Required.  A C<List> with month names for this locale, starting
+at January.
+
+=head2 date-time-representation
+
+Required.  The C<strftime> format representation for date and time
+for this locale.
+
+=head2 am
+
+Optional.  The representation of "ante meridiem" for this locale.
+Defaults to "am".
+
+=head2 pm
+
+Optional.  The representation of "post meridiem" for this locale.
+Defaults to "pm".
+
+=head2 abbreviated-weekdays
+
+Optional.  A C<List> with abbreviated weekday names for this locale,
+starting at Monday.  Defaults to the first 3 letters of the weekdays.
+
+=head2 abbreviated-months
+
+Optional.  A C<List> with abbreviated month names for this locale,
+starting at January.  Defaults to the first 3 letters of the month names.
+
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@raku.rocks>

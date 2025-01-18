@@ -111,6 +111,63 @@ say $ld.date-time-representation;  # %a %b %e %T %Z %G
 
 The `date-time-representation` method returns the `strftime` format for the representation of date and time.
 
+CREATING YOUR OWN DATE LOCALE
+=============================
+
+```raku
+my $ld = Locale::Dates.new(
+  code => "foo",
+  weekdays => <AAAA BBBB CCCC DDDD EEEE FFFF GGGG>,
+  months   => <MMMM NNNN OOOO PPPP QQQQ RRRR
+               SSSS TTTT UUUU VVVV WWWW XXXX>,
+  date-time-representation => "zippie",
+  am => "meh",
+  pm => "duh",
+);
+```
+
+The `Locale::Dates` class can be instantiated like any other Raku class using named arguments.
+
+code
+----
+
+Required. The identifier code of this locale.
+
+weekdays
+--------
+
+Required. A `List` with weekday names for this locale, starting at Monday.
+
+months
+------
+
+Required. A `List` with month names for this locale, starting at January.
+
+date-time-representation
+------------------------
+
+Required. The `strftime` format representation for date and time for this locale.
+
+am
+--
+
+Optional. The representation of "ante meridiem" for this locale. Defaults to "am".
+
+pm
+--
+
+Optional. The representation of "post meridiem" for this locale. Defaults to "pm".
+
+abbreviated-weekdays
+--------------------
+
+Optional. A `List` with abbreviated weekday names for this locale, starting at Monday. Defaults to the first 3 letters of the weekdays.
+
+abbreviated-months
+------------------
+
+Optional. A `List` with abbreviated month names for this locale, starting at January. Defaults to the first 3 letters of the month names.
+
 AUTHOR
 ======
 
