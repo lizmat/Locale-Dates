@@ -1,4 +1,4 @@
-class Locale::Dates:ver<0.0.3>:auth<zef:lizmat> {
+class Locale::Dates:ver<0.0.4>:auth<zef:lizmat> {
     has str $.code                     is required;
     has     @.weekdays                 is required;
     has     @.months                   is required;
