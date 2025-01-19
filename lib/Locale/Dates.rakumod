@@ -7,6 +7,8 @@ class Locale::Dates {
     has str $.am = "am";
     has str $.pm = "pm";
     has str $.date-time-representation = '%a %e %b %T %Z %G';
+    has str $.date-representation      = '%a %e %b %G';
+    has str $.time-representation      = '%T';
 
     method TWEAK() {
         # Make sure 0-based weekdays also work
@@ -51,6 +53,7 @@ my constant %known-locales =
     weekdays => <Monday Tuesday Wednesday Thursday Friday Saturday Sunday>,  # UNCOVERABLE
     months   => <January February March April May June July August September October November December>,  # UNCOVERABLE
     date-time-representation => '%a %b %e %T %Z %G',
+    date-representation      => '%a %b %e %G',
   ),
 
   NL => Locale::Dates.new(

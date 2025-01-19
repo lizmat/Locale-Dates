@@ -23,6 +23,8 @@ say $ld.am;    # am
 say $ld.pm;    # pm
 
 say $ld.date-time-representation;  # %a %b %e %T %Z %G
+say $ld.date-representation        # %a %b %e %G
+say $ld.time-representation        # %T
 ```
 
 DESCRIPTION
@@ -111,6 +113,24 @@ say $ld.date-time-representation;  # %a %b %e %T %Z %G
 
 The `date-time-representation` method returns the `strftime` format for the representation of date and time.
 
+date-representation
+-------------------
+
+```raku
+say $ld.date-representation;  # %a %b %e %G
+```
+
+The `date-representation` method returns the `strftime` format for the representation of a date.
+
+time-representation
+-------------------
+
+```raku
+say $ld.time-representation;  # %T
+```
+
+The `time-representation` method returns the `strftime` format for the representation of a time.
+
 CREATING YOUR OWN DATE LOCALE
 =============================
 
@@ -146,6 +166,16 @@ date-time-representation
 ------------------------
 
 Optional. The `strftime` format representation for date and time for this locale. Defaults to `"%a %e %b %T %Z %G"`.
+
+date-representation
+-------------------
+
+Optional. The `strftime` format representation for a date in this locale. Defaults to `"%a %e %b %G"`.
+
+time-representation
+-------------------
+
+Optional. The `strftime` format representation for a time in this locale. Defaults to `"%T"`.
 
 am
 --

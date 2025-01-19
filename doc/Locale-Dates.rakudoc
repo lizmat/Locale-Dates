@@ -22,6 +22,8 @@ say $ld.am;    # am
 say $ld.pm;    # pm
 
 say $ld.date-time-representation;  # %a %b %e %T %Z %G
+say $ld.date-representation        # %a %b %e %G
+say $ld.time-representation        # %T
 
 =end code
 
@@ -124,6 +126,28 @@ say $ld.date-time-representation;  # %a %b %e %T %Z %G
 The C<date-time-representation> method returns the C<strftime> format
 for the representation of date and time.
 
+=head2 date-representation
+
+=begin code :lang<raku>
+
+say $ld.date-representation;  # %a %b %e %G
+
+=end code
+
+The C<date-representation> method returns the C<strftime> format for
+the representation of a date.
+
+=head2 time-representation
+
+=begin code :lang<raku>
+
+say $ld.time-representation;  # %T
+
+=end code
+
+The C<time-representation> method returns the C<strftime> format for
+the representation of a time.
+
 =head1 CREATING YOUR OWN DATE LOCALE
 
 =begin code :lang<raku>
@@ -160,6 +184,16 @@ at January.
 
 Optional.  The C<strftime> format representation for date and time
 for this locale.  Defaults to C<"%a %e %b %T %Z %G">.
+
+=head2 date-representation
+
+Optional.  The C<strftime> format representation for a date in this
+locale.  Defaults to C<"%a %e %b %G">.
+
+=head2 time-representation
+
+Optional.  The C<strftime> format representation for a time in this
+locale.  Defaults to C<"%T">.
 
 =head2 am
 

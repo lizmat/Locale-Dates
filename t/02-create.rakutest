@@ -1,7 +1,7 @@
 use Test;
 use Locale::Dates;
 
-plan 12;
+plan 14;
 
 my %args is Map =
   code => "foo",
@@ -9,6 +9,8 @@ my %args is Map =
   months   => <MMMM NNNN OOOO PPPP QQQQ RRRR
                SSSS TTTT UUUU VVVV WWWW XXXX>,
   date-time-representation => "zippie",
+  date-representation      => "zip",
+  time-representation      => "pie",
   am => "meh",
   pm => "duh",
 ;
@@ -21,6 +23,10 @@ is $ld.pm,   %args<pm>,   'is pm correct';
 
 is $ld.date-time-representation, %args<date-time-representation>,
   'is date-time-representation correct';
+is $ld.date-representation, %args<date-representation>,
+  'is date-representation correct';
+is $ld.time-representation, %args<time-representation>,
+  'is time-representation correct';
 
 is $ld.weekdays[0], 'GGGG', 'is weekday 0 correct';
 is $ld.weekdays[1], 'AAAA', 'is weekday 1 correct';
