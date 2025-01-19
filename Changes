@@ -1,6 +1,8 @@
 Revision history for Locale::Dates
 
 {{$NEXT}}
+
+0.0.2  2025-01-19T01:13:55+01:00
     - Add support for date-representation and time-representation
       attributes / methods
 
