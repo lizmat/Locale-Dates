@@ -1,6 +1,9 @@
 Revision history for Locale::Dates
 
 {{$NEXT}}
+    - Add instance methods AM/PM, to provide uppercase value
+      for am/pm.
+    - Change instance methods am/pm to always return lowercase
 
 0.0.3  2025-01-19T12:48:24+01:00
     - No change, but fez appears to have eaten releases 1 and 2

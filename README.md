@@ -86,23 +86,25 @@ say $ld.code;  # EN
 
 The `code` method returns the identifying code of this locale.
 
-am
---
+am / AM
+-------
 
 ```raku
 say $ld.am;  # am
+say $ld.AM;  # AM
 ```
 
-The `am` method returns the representation of "ante meridiem".
+The `am` method returns the representation of "ante meridiem", in lowercase, the `AM` method in uppercase.
 
-pm
---
+pm / PM
+-------
 
 ```raku
 say $ld.pm;  # pm
+say $ld.PM;  # PM
 ```
 
-The `pm` method returns the representation of "post meridiem".
+The `pm` method returns the representation of "post meridiem" in lowercase, the `PM` method in uppercase.
 
 date-time-representation
 ------------------------

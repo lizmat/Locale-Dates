@@ -1,4 +1,4 @@
-class Locale::Dates {
+class Locale::Dates:ver<0.0.3>:auth<zef:lizmat> {
     has str $.code                     is required;
     has     @.weekdays                 is required;
     has     @.months                   is required;
@@ -37,6 +37,11 @@ class Locale::Dates {
             @!abbreviated-months := @!months.map(*.substr(0,3)).List;
         }
     }
+
+    method am(Locale::Dates:D:) { $!am.lc }
+    method pm(Locale::Dates:D:) { $!pm.lc }
+    method AM(Locale::Dates:D:) { $!am.uc }
+    method PM(Locale::Dates:D:) { $!pm.uc }
 }
 
 # At some point in time these should probably be generated from locale

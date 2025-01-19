@@ -95,25 +95,29 @@ say $ld.code;  # EN
 
 The C<code> method returns the identifying code of this locale.
 
-=head2 am
+=head2 am / AM
 
 =begin code :lang<raku>
 
 say $ld.am;  # am
+say $ld.AM;  # AM
 
 =end code
 
-The C<am> method returns the representation of "ante meridiem".
+The C<am> method returns the representation of "ante meridiem",
+in lowercase, the C<AM> method in uppercase.
 
-=head2 pm
+=head2 pm / PM
 
 =begin code :lang<raku>
 
 say $ld.pm;  # pm
+say $ld.PM;  # PM
 
 =end code
 
-The C<pm> method returns the representation of "post meridiem".
+The C<pm> method returns the representation of "post meridiem"
+in lowercase, the C<PM> method in uppercase.
 
 =head2 date-time-representation
 

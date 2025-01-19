@@ -1,7 +1,7 @@
 use Test;
 use Locale::Dates;
 
-plan 14;
+plan 16;
 
 my %args is Map =
   code => "foo",
@@ -17,9 +17,11 @@ my %args is Map =
 
 my $ld = Locale::Dates.new(|%args);
 
-is $ld.code, %args<code>, 'is code correct';
-is $ld.am,   %args<am>,   'is am correct';
-is $ld.pm,   %args<pm>,   'is pm correct';
+is $ld.code, %args<code>,    'is code correct';
+is $ld.am,   %args<am>,      'is am correct';
+is $ld.pm,   %args<pm>,      'is pm correct';
+is $ld.AM,   %args<am>.uc,   'is AM correct';
+is $ld.PM,   %args<pm>.uc,   'is PM correct';
 
 is $ld.date-time-representation, %args<date-time-representation>,
   'is date-time-representation correct';
