@@ -65,6 +65,7 @@ my constant %known-locales =
     code     => "NL",
     weekdays => <maandag dinsdag woensdag donderdag vrijdag zaterdag zondag>,  # UNCOVERABLE
     months   => <januari februari maart april mei juni juli augustus september oktober november december>,  # UNCOVERABLE
+    abbreviated-months => <jan feb mrt apr mei juni jul aug sep okt nov dec>,  # UNCOVERABLE
   ),
 ;
 
