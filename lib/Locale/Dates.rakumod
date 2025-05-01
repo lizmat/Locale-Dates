@@ -1,4 +1,4 @@
-class Locale::Dates:ver<0.0.4>:auth<zef:lizmat> {
+class Locale::Dates:ver<0.0.5>:auth<zef:lizmat> {
     has str $.code                     is required;
     has     @.weekdays                 is required;
     has     @.months                   is required;
@@ -6,8 +6,8 @@ class Locale::Dates:ver<0.0.4>:auth<zef:lizmat> {
     has     @.abbreviated-months;
     has str $.am = "am";
     has str $.pm = "pm";
-    has str $.date-time-representation = '%a %e %b %T %Z %G';
-    has str $.date-representation      = '%a %e %b %G';
+    has str $.date-time-representation = '%a %e %b %T %Z %Y';
+    has str $.date-representation      = '%a %e %b %Y';
     has str $.time-representation      = '%T';
 
     method TWEAK() {
@@ -57,8 +57,8 @@ my constant %known-locales =
     code     => "EN",
     weekdays => <Monday Tuesday Wednesday Thursday Friday Saturday Sunday>,  # UNCOVERABLE
     months   => <January February March April May June July August September October November December>,  # UNCOVERABLE
-    date-time-representation => '%a %b %e %T %Z %G',
-    date-representation      => '%a %b %e %G',
+    date-time-representation => '%a %b %e %T %Z %Y',
+    date-representation      => '%a %b %e %Y',
   ),
 
   NL => Locale::Dates.new(

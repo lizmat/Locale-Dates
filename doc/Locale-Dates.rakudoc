@@ -21,8 +21,8 @@ say $ld.code;  # EN
 say $ld.am;    # am
 say $ld.pm;    # pm
 
-say $ld.date-time-representation;  # %a %b %e %T %Z %G
-say $ld.date-representation        # %a %b %e %G
+say $ld.date-time-representation;  # %a %b %e %T %Z %Y
+say $ld.date-representation        # %a %b %e %Y
 say $ld.time-representation        # %T
 
 =end code
@@ -123,7 +123,7 @@ in lowercase, the C<PM> method in uppercase.
 
 =begin code :lang<raku>
 
-say $ld.date-time-representation;  # %a %b %e %T %Z %G
+say $ld.date-time-representation;  # %a %b %e %T %Z %Y
 
 =end code
 
@@ -134,7 +134,7 @@ for the representation of date and time.
 
 =begin code :lang<raku>
 
-say $ld.date-representation;  # %a %b %e %G
+say $ld.date-representation;  # %a %b %e %Y
 
 =end code
 
@@ -187,12 +187,12 @@ at January.
 =head2 date-time-representation
 
 Optional.  The C<strftime> format representation for date and time
-for this locale.  Defaults to C<"%a %e %b %T %Z %G">.
+for this locale.  Defaults to C<"%a %e %b %T %Z %Y">.
 
 =head2 date-representation
 
 Optional.  The C<strftime> format representation for a date in this
-locale.  Defaults to C<"%a %e %b %G">.
+locale.  Defaults to C<"%a %e %b %Y">.
 
 =head2 time-representation
 

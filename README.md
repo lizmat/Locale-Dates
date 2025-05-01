@@ -22,8 +22,8 @@ say $ld.code;  # EN
 say $ld.am;    # am
 say $ld.pm;    # pm
 
-say $ld.date-time-representation;  # %a %b %e %T %Z %G
-say $ld.date-representation        # %a %b %e %G
+say $ld.date-time-representation;  # %a %b %e %T %Z %Y
+say $ld.date-representation        # %a %b %e %Y
 say $ld.time-representation        # %T
 ```
 
@@ -110,7 +110,7 @@ date-time-representation
 ------------------------
 
 ```raku
-say $ld.date-time-representation;  # %a %b %e %T %Z %G
+say $ld.date-time-representation;  # %a %b %e %T %Z %Y
 ```
 
 The `date-time-representation` method returns the `strftime` format for the representation of date and time.
@@ -119,7 +119,7 @@ date-representation
 -------------------
 
 ```raku
-say $ld.date-representation;  # %a %b %e %G
+say $ld.date-representation;  # %a %b %e %Y
 ```
 
 The `date-representation` method returns the `strftime` format for the representation of a date.
@@ -167,12 +167,12 @@ Required. A `List` with month names for this locale, starting at January.
 date-time-representation
 ------------------------
 
-Optional. The `strftime` format representation for date and time for this locale. Defaults to `"%a %e %b %T %Z %G"`.
+Optional. The `strftime` format representation for date and time for this locale. Defaults to `"%a %e %b %T %Z %Y"`.
 
 date-representation
 -------------------
 
-Optional. The `strftime` format representation for a date in this locale. Defaults to `"%a %e %b %G"`.
+Optional. The `strftime` format representation for a date in this locale. Defaults to `"%a %e %b %Y"`.
 
 time-representation
 -------------------
