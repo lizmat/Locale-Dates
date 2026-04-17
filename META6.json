@@ -3,6 +3,8 @@
   "authors": [
     "Elizabeth Mattijsen"
   ],
+  "build-depends": [
+  ],
   "depends": [
   ],
   "description": "encapsulate locale information about dates",
@@ -12,6 +14,9 @@
     "Locale::Dates": "lib/Locale/Dates.rakumod"
   },
   "raku": "6.d",
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/Locale-Dates.git",
   "support": {
     "bugtracker": "https://github.com/lizmat/Locale-Dates/issues",
     "email": "liz@raku.rocks",
@@ -21,5 +26,7 @@
     "LOCALE",
     "DATETIME"
   ],
-  "version": "0.0.5"
+  "test-depends": [
+  ],
+  "version": "0.0.6"
 }
