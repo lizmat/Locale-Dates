@@ -10,7 +10,7 @@ Locale::Dates - encapsulate locale information about dates
 
 use Locale::Dates;
 
-my $ld = Locale::Dates("EN");  # or DE NL
+my $ld = Locale::Dates("EN");  # or DE NL RU
 
 say $ld.weekdays[1];              # Monday
 say $ld.abbreviated-weekdays[2];  # Tue
