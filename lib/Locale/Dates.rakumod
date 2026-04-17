@@ -67,6 +67,18 @@ my constant %known-locales =
     months   => <januari februari maart april mei juni juli augustus september oktober november december>,  # UNCOVERABLE
     abbreviated-months => <jan feb mrt apr mei juni jul aug sep okt nov dec>,  # UNCOVERABLE
   ),
+
+  RU => Locale::Dates.new(
+    code                  => "RU",
+    weekdays              => <Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье>,  # UNCOVERABLE
+    months                => <января февраля марта апреля мая июня июля августа сентября октября ноября декабря>,  # UNCOVERABLE
+    abbreviated-weekdays  => <Пн Вт Ср Чт Пт Сб Вс>,  # UNCOVERABLE
+    abbreviated-months    => <янв фев мар апр мая июн июл авг сен окт ноя дек>,  # UNCOVERABLE
+    date-time-representation => '%a %d %b %Y %T',
+    date-representation      => '%d.%m.%Y',
+    am                    => "",
+    pm                    => "",
+),
 ;
 
 use MONKEY-TYPING;

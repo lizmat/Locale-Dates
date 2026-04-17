@@ -1,7 +1,7 @@
 use Test;
 use Locale::Dates;
 
-my @known-locales = <DE EN NL>;
+my @known-locales = <DE EN NL RU>;
 
 plan 2 * @known-locales;
 
