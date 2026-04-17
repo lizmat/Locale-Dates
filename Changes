@@ -1,6 +1,8 @@
 Revision history for Locale::Dates
 
 {{$NEXT}}
+    - Add Russion localization, Flin++
+    - Update copyright year
 
 0.0.5  2025-05-01T11:47:27+02:00
     - A strftime string should not mix the %G specifier
