@@ -16,11 +16,11 @@
   "raku": "6.d",
   "resources": [
   ],
-  "source-url": "https://github.com/lizmat/Locale-Dates.git",
+  "source-url": "https://codeberg.org/lizmat/Locale-Dates.git",
   "support": {
-    "bugtracker": "https://github.com/lizmat/Locale-Dates/issues",
+    "bugtracker": "https://codeberg.org/lizmat/Locale-Dates/issues",
     "email": "liz@raku.rocks",
-    "source": "https://github.com/lizmat/Locale-Dates.git"
+    "source": "https://codeberg.org/lizmat/Locale-Dates.git"
   },
   "tags": [
     "LOCALE",

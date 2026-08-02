@@ -1,6 +1,9 @@
 Revision history for Locale::Dates
 
 {{$NEXT}}
+    - Add Bulgaria, French and Portruoguese localizations,
+      swiped from DateTime::Format
+    - Add class method "known-locales"
 
 0.0.6  2026-04-17T14:28:35+02:00
     - Add Russion localization, Flin++

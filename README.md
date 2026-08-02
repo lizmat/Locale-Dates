@@ -11,7 +11,7 @@ SYNOPSIS
 ```raku
 use Locale::Dates;
 
-my $ld = Locale::Dates("EN");  # or DE NL RU
+my $ld = Locale::Dates("EN");  # or BG DE FR NL PT RU
 
 say $ld.weekdays[1];              # Monday
 say $ld.abbreviated-weekdays[2];  # Tue
@@ -25,6 +25,8 @@ say $ld.pm;    # pm
 say $ld.date-time-representation;  # %a %b %e %T %Z %Y
 say $ld.date-representation        # %a %b %e %Y
 say $ld.time-representation        # %T
+
+say Locale::Dates.known-locales;  # (BG DE FR NL PT RU)
 ```
 
 DESCRIPTION
@@ -32,8 +34,20 @@ DESCRIPTION
 
 The `Locale-Dates` distribution provides a database of locale information pertaining to dates. And it provides a class to encapsulate bespoke information.
 
-METHODS
-=======
+CLASS METHODS
+=============
+
+known-locales
+-------------
+
+```raku
+say Locale::Dates.known-locales;  # (BG DE FR NL PT RU)
+```
+
+Returns a `List` of known locales, identified by their 2-letter ISO code.
+
+INSTANCE METHODS
+================
 
 weekdays
 --------
@@ -204,7 +218,7 @@ AUTHOR
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
-Source can be located at: https://github.com/lizmat/Locale-Dates . Comments and Pull Requests are welcome.
+Source can be located at: https://codeberg.org/lizmat/Locale-Dates . Comments and Pull Requests are welcome.
 
 If you like this module, or what I'm doing more generally, committing to a [small sponsorship](https://github.com/sponsors/lizmat/) would mean a great deal to me!
 

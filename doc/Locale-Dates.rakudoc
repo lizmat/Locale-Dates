@@ -9,7 +9,7 @@ Locale::Dates - encapsulate locale information about dates
 =begin code :lang<raku>
 use Locale::Dates;
 
-my $ld = Locale::Dates("EN");  # or DE NL RU
+my $ld = Locale::Dates("EN");  # or BG DE FR NL PT RU
 
 say $ld.weekdays[1];              # Monday
 say $ld.abbreviated-weekdays[2];  # Tue
@@ -23,6 +23,8 @@ say $ld.pm;    # pm
 say $ld.date-time-representation;  # %a %b %e %T %Z %Y
 say $ld.date-representation        # %a %b %e %Y
 say $ld.time-representation        # %T
+
+say Locale::Dates.known-locales;  # (BG DE FR NL PT RU)
 =end code
 
 =head1 DESCRIPTION
@@ -31,7 +33,18 @@ The C<Locale-Dates> distribution provides a database of locale
 information pertaining to dates.  And it provides a class to encapsulate
 bespoke information.
 
-=head1 METHODS
+=head1 CLASS METHODS
+
+=head2 known-locales
+
+=begin code :lang<raku>
+say Locale::Dates.known-locales;  # (BG DE FR NL PT RU)
+=end code
+
+Returns a C<List> of known locales, identified by their 2-letter
+ISO code.
+
+=head1 INSTANCE METHODS
 
 =head2 weekdays
 
@@ -199,7 +212,7 @@ starting at January.  Defaults to the first 3 letters of the month names.
 
 Elizabeth Mattijsen <liz@raku.rocks>
 
-Source can be located at: https://github.com/lizmat/Locale-Dates .
+Source can be located at: https://codeberg.org/lizmat/Locale-Dates .
 Comments and Pull Requests are welcome.
 
 If you like this module, or what I'm doing more generally, committing to a

@@ -1,9 +1,12 @@
 use Test;
 use Locale::Dates;
 
-my @known-locales = <DE EN NL RU>;
+my constant @known-locales = <BG DE EN FR NL PT RU>;
 
-plan 2 * @known-locales;
+plan 1 + 2 * @known-locales;
+
+is-deeply Locale::Dates.known-locales, @known-locales,
+  'are all known locales accounted for';
 
 for @known-locales {
     my $ld = Locale::Dates($_);

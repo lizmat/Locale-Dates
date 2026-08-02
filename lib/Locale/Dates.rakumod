@@ -47,6 +47,16 @@ class Locale::Dates:ver<0.0.6>:auth<zef:lizmat> {
 # At some point in time these should probably be generated from locale
 # files
 my constant %known-locales =
+  BG => Locale::Dates.new(
+    code     => "BG",
+    weekdays => <Понеделник Вторник Сряда Четвъртък Петък Събота Неделя>,  # UNCOVERABLE
+    months   => <Януари Февруари Март Април Май Юни Юли Август Септември Октомври Ноември Декември>,  # UNCOVERABLE
+    date-time-representation => '%a %d %b %Y %T',
+    date-representation      => '%d.%m.%Y',
+    am => "",
+    pm => "",
+  ),
+
   DE => Locale::Dates.new(
     code     => "DE",
     weekdays => <Montag Dienstag Mittwoch Donnerstag Freitag Samstag Sontag>,  # UNCOVERABLE
@@ -61,11 +71,23 @@ my constant %known-locales =
     date-representation      => '%a %b %e %Y',
   ),
 
+  FR => Locale::Dates.new(
+    code     => "FR",
+    weekdays => <lundi mardi mercredi jeudi vendredi samedi dimanche>,  # UNCOVERABLE
+    months   => <janvier février mars avril mai juin juillet août septembre octobre novembre décembre>,  # UNCOVERABLE
+  ),
+
   NL => Locale::Dates.new(
     code     => "NL",
     weekdays => <maandag dinsdag woensdag donderdag vrijdag zaterdag zondag>,  # UNCOVERABLE
     months   => <januari februari maart april mei juni juli augustus september oktober november december>,  # UNCOVERABLE
     abbreviated-months => <jan feb mrt apr mei juni jul aug sep okt nov dec>,  # UNCOVERABLE
+  ),
+
+  PT => Locale::Dates.new(
+    code     => "PT",
+    weekdays => <segunda-feira terça-feira quarta-feira quinta-feira sexta-feira sábado domingo>,  # UNCOVERABLE
+    months   => <janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro>,  # UNCOVERABLE
   ),
 
   RU => Locale::Dates.new(
@@ -76,10 +98,12 @@ my constant %known-locales =
     abbreviated-months    => <янв фев мар апр мая июн июл авг сен окт ноя дек>,  # UNCOVERABLE
     date-time-representation => '%a %d %b %Y %T',
     date-representation      => '%d.%m.%Y',
-    am                    => "",
-    pm                    => "",
+    am => "",
+    pm => "",
 ),
 ;
+
+my constant @known-locales = %known-locales.keys.sort;
 
 use MONKEY-TYPING;
 augment class Locale::Dates {
@@ -88,6 +112,8 @@ augment class Locale::Dates {
           ?? self.bless(|%_)
           !! %known-locales{$locale} // %known-locales<EN>
     }
+
+    method known-locales() { @known-locales }
 }
 
 # vim: expandtab shiftwidth=4
